@@ -4,25 +4,16 @@
 
 #include <iostream>
 #include <string>
+#include "contact.hpp"
 
 class Phonebook {
     private:
-        std::string _fname;
-        std::string _lname;
-        std::string _nname;
-        std::string _phnum;
-        std::string _secret; 
+        Contact contact[MAX_CONTACT];
     public:
-        void    setFname();
-        void    getFname();
-        void    setLname();
-        void    getLname();
-        void    setNname();
-        void    getNname();
-        void    setPhnum();
-        void    getPhnum();
-        void    setSecret();
-        void    getSecret();       
+        Phonebook();
+        ~Phonebook();
+    void add_contact();
+    void search_contact();
 };
 
 #endif
