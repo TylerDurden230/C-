@@ -1,40 +1,49 @@
 #include "Phonebook.hpp"
 
-void    add_contact(Phonebook *contact, int *index)
+void	add_contact(Contact *contact, int *index)
 {
-	if(*index >= MAX_CONTACT)
-	{
-		
-	}
-	else
-	{
-		contact[*index].add_contact();
-		*index += 1;
-	}
+
 }
 
-int check_input(Phonebook *contact, int *index, std::string input)
+int check_input(std::string input)
 {
-	std::string add = "ADD";
-	std::string search = "SEARCH";
-	std::string exit = "EXIT";
+	std::string add = ADD;
+	std::string search = SEARCH;
+	std::string exit = EXIT;
 
-	if (add.compare(input))
-		add_contact(contact, index);
+	if (input == ADD)
+		add_contact;
+	else if (input == SEARCH)
+		add_contact;
 
 	return 0;
 }
 
+Phonebook::Phonebook()
+{
+}
+Phonebook::~Phonebook()
+{	
+}
+
+Contact	Phonebook::get_contact()
+{
+	return (*contact);
+}
+
+
 int main() 
 {
-	Phonebook contact[MAX_CONTACT];
-	int index;
+	Phonebook phonebook;
 	int check;
 	std::string input;
 
-	std::getline(std::cin, input);
-	check_input(contact, &index, input);
-	std::cout << input << std::endl;
+	while(check != 0)
+	{
+		std::getline(std::cin, input);
+		check_input(input);
 
+		std::cout << input << std::endl;
+	}
 	return (0);
 }

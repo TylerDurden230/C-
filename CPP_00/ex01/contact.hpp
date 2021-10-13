@@ -10,7 +10,8 @@ class Contact {
         std::string _lname;
         std::string _nname;
         std::string _phnum;
-        std::string _secret; 
+        std::string _secret;
+        int index;
     public:
         Contact();
         ~Contact();

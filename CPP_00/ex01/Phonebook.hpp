@@ -1,6 +1,10 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
+
 #define MAX_CONTACT 8
+#define ADD "ADD"
+#define SEARCH "SEARCH"
+#define EXIT "EXIT"
 
 #include <iostream>
 #include <string>
@@ -11,9 +15,13 @@ class Phonebook {
         Contact contact[MAX_CONTACT];
     public:
         Phonebook();
+        Contact get_contact();
+        void add_contact(Contact contact, int *index);
+        void search_contact();
         ~Phonebook();
-    void add_contact();
-    void search_contact();
 };
+
+int     check_input(std::string input);
+void	add_contact(Contact *contact, int *index);
 
 #endif
