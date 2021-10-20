@@ -13,6 +13,7 @@
 class Phonebook {
     private:
         Contact contact[MAX_CONTACT];
+        int index;
     public:
         Phonebook();
         Contact get_contact();
@@ -22,6 +23,5 @@ class Phonebook {
 };
 
 int     check_input(std::string input);
-void	add_contact(Contact *contact, int *index);
 
 #endif

@@ -11,7 +11,6 @@ class Contact {
         std::string _nname;
         std::string _phnum;
         std::string _secret;
-        int index;
     public:
         Contact();
         ~Contact();
