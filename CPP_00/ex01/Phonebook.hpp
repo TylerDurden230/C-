@@ -17,7 +17,7 @@ class Phonebook {
     public:
         Phonebook();
         Contact get_contact();
-        void add_contact(Contact contact, int *index);
+        void add_contact(Contact contact);
         void search_contact();
         ~Phonebook();
 };
