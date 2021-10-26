@@ -16,12 +16,11 @@ class Phonebook {
         int index;
     public:
         Phonebook();
-        Contact get_contact();
-        void add_contact(Contact contact);
-        void search_contact();
+        void    add_contact(Contact contact);
+        int     get_index();
+        Contact get_contact(int index);
+        void    show_contact(Contact contact);
         ~Phonebook();
 };
-
-int     check_input(std::string input);
 
 #endif
