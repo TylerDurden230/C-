@@ -16,10 +16,10 @@ class Phonebook {
         int index;
     public:
         Phonebook();
-        void    add_contact(Contact contact);
+        void    add_contact();
         int     get_index();
         Contact get_contact(int index);
-        void    show_contact(Contact contact);
+        void    show_contact(int i);
         ~Phonebook();
 };
 

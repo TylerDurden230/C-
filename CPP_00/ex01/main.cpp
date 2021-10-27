@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "Phonebook.hpp"
 
 char ft_toupper(char c)
 {
@@ -38,21 +38,22 @@ int main()
 	start();
 	while(check != 0)
 	{
+		std::cout << "Check: " << check << std::endl;
 		std::cout << "Command: ";
 		std::getline(std::cin, input);
 		check = check_input(input);
 		if (check == 1)
-			phonebook.add_contact(phonebook.get_contact(phonebook.get_index()));
+			phonebook.add_contact();
 		else if (check == 2)
 		{
+			std::cout << "get i: ";
 			std::getline(std::cin, input_index);
-			i = std::stoi(input_index);
-			phonebook.show_contact(phonebook.get_contact(i));
+			i = std::atoi(input_index.c_str());
+			phonebook.show_contact(i);
 		}
 		else if (check == -1)
 			std::cout << "Error: Invalid Command" << std::endl;
 	}
 	std::cout << "index: " << phonebook.get_index() << std::endl;
-	phonebook.~Phonebook();
 	return (0);
 }

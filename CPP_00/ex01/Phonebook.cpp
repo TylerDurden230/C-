@@ -1,23 +1,24 @@
 #include "Phonebook.hpp"
 
-void Phonebook::add_contact(Contact contact)
+void Phonebook::add_contact()
 {
+	
 	std::string str;
 	std::cout << "First Name: ";
 	std::getline(std::cin, str);
-	contact.setFname(str);
+	contact[index].setFname(str);
 	std::cout << "Last Name: ";
 	std::getline(std::cin, str);
-	contact.setLname(str);
+	contact[index].setLname(str);
 	std::cout << "Nickname: ";
 	std::getline(std::cin, str);
-	contact.setNname(str);
+	contact[index].setNname(str);
 	std::cout << "Phone Number: ";
 	std::getline(std::cin, str);
-	contact.setPhnum(str);
+	contact[index].setPhnum(str);
 	std::cout << "Darkest Secret: ";
 	std::getline(std::cin, str);
-	contact.setSecret(str);
+	contact[index].setSecret(str);
 	std::cout << "A new contact has been added!" << std::endl;
 	if (index < 7)
 		index++;
@@ -43,7 +44,7 @@ Contact	Phonebook::get_contact(int index)
 	return (contact[index]);
 }
 
-void    Phonebook::show_contact(Contact contact)
+void    Phonebook::show_contact(int i)
 {
-	std::cout << contact.getFname() << std::endl;
+	std::cout << contact[i].getFname() << std::endl;
 }
