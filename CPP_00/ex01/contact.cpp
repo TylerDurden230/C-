@@ -1,6 +1,6 @@
      #include "contact.hpp"
 
-    Contact::Contact()
+    Contact::Contact() : is_empty(true)
     {
     }
 
@@ -56,3 +56,12 @@
     {
         return _secret;
     }
+
+    void    Contact::setIsEmpty(bool x)
+    {
+        is_empty = x;
+    }
+        
+    bool    Contact::getIsEmpty(){
+        return (is_empty);
+    }   

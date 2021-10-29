@@ -11,6 +11,7 @@ class Contact {
         std::string _nname;
         std::string _phnum;
         std::string _secret;
+        bool is_empty;
     public:
         Contact();
         ~Contact();
@@ -24,7 +25,9 @@ class Contact {
         void    setPhnum(std::string str);
         std::string    getPhnum();
         void    setSecret(std::string str);
-        std::string    getSecret();       
+        std::string    getSecret();
+        void    setIsEmpty(bool x);
+        bool    getIsEmpty();     
 };
 
 #endif

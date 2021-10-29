@@ -1,10 +1,5 @@
 #include "Phonebook.hpp"
 
-char ft_toupper(char c)
-{
-	return ((c >= 97 && c <= 122) ? c - 32 : c);
-}
-
 void	start()
 {
 	std::cout << "Hi, this is your Phonebook." << std::endl;
@@ -17,6 +12,7 @@ void	start()
 
 int	check_input(std::string input)
 {
+
 	if (input == ADD || input == "add")
 		return (1);
 	else if (input == SEARCH || input == "search")
@@ -46,10 +42,11 @@ int main()
 			phonebook.add_contact();
 		else if (check == 2)
 		{
-			std::cout << "get i: ";
+			phonebook.show_contacts();
+			std::cout << "type index: ";
 			std::getline(std::cin, input_index);
 			i = std::atoi(input_index.c_str());
-			phonebook.show_contact(i);
+			phonebook.show_full_contact(i);
 		}
 		else if (check == -1)
 			std::cout << "Error: Invalid Command" << std::endl;

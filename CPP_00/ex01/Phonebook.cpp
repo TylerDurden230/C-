@@ -2,7 +2,6 @@
 
 void Phonebook::add_contact()
 {
-	
 	std::string str;
 	std::cout << "First Name: ";
 	std::getline(std::cin, str);
@@ -20,6 +19,7 @@ void Phonebook::add_contact()
 	std::getline(std::cin, str);
 	contact[index].setSecret(str);
 	std::cout << "A new contact has been added!" << std::endl;
+	contact[index].setIsEmpty(false);
 	if (index < 7)
 		index++;
 	else 
@@ -44,7 +44,36 @@ Contact	Phonebook::get_contact(int index)
 	return (contact[index]);
 }
 
-void    Phonebook::show_contact(int i)
+int		Phonebook::check_contacts() // deve controllare quanti contatti esitono
 {
-	std::cout << contact[i].getFname() << std::endl;
+	int i = 0;
+	std::string check = contact[i].getFname();
+	if (!check.empty())
+	{
+		
+	}
+	return (i);
+}
+
+void	Phonebook::show_contacts() // mostra i contatti esistenti, formattatti nel modo corretto
+{
+	std::cout << "|     index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "|----------|----------|----------|----------|" << std::endl;
+	for (int i = 0; i < 8; i++)
+	{
+		if (!contact[i].getIsEmpty())
+		{
+			std::cout << "|" << std::setw(10) << i << "|" << std::setw(10) << contact[i].getFname().substr(0, 9).append(".") << "|"
+			<< std::setw(10) << contact[i].getLname() << "|" << std::setw(10) << contact[i].getNname() << "|" << std::endl; 
+		}
+	}
+}
+
+void    Phonebook::show_full_contact(int i)
+{
+	std::cout << "First Name: " << contact[i].getFname() << std::endl;
+	std::cout << "Last Name: " << contact[i].getLname() << std::endl;
+	std::cout << "Nickname: " << contact[i].getNname() << std::endl;
+	std::cout << "Phone Number: " << contact[i].getPhnum() << std::endl;
+	std::cout << "Darkest Secret: " << contact[i].getSecret() << std::endl;
 }

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include "contact.hpp"
+#include <iomanip>
 
 class Phonebook {
     private:
@@ -19,7 +20,9 @@ class Phonebook {
         void    add_contact();
         int     get_index();
         Contact get_contact(int index);
-        void    show_contact(int i);
+        int     check_contacts();
+        void    show_contacts();        
+        void    show_full_contact(int i);
         ~Phonebook();
 };
 
