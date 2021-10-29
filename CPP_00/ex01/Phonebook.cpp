@@ -64,7 +64,7 @@ void	Phonebook::show_contacts() // mostra i contatti esistenti, formattatti nel 
 		if (!contact[i].getIsEmpty())
 		{
 			std::cout << "|" << std::setw(10) << i << "|" << std::setw(10) << contact[i].getFname().substr(0, 9).append(".") << "|"
-			<< std::setw(10) << contact[i].getLname() << "|" << std::setw(10) << contact[i].getNname() << "|" << std::endl; 
+			<< std::setw(10) << contact[i].getLname().substr(0, 9).append(".") << "|" << std::setw(10) << contact[i].getNname().substr(0, 9).append(".") << "|" << std::endl; 
 		}
 	}
 }
