@@ -2,55 +2,97 @@
 
 void	start()
 {
-	std::cout << "Hi, this is your Phonebook." << std::endl;
-	std::cout << "You have 3 different options" << std::endl;
-	std::cout << "ADD: to add a new contact" << std::endl;
-	std::cout << "SEARCH: to search a contact" << std::endl;
-	std::cout << "EXIT: to exit this program" << std::endl;
+	std::cout << "Hi, this is your CRAPPY AWESOME PHONEBOOK." << std::endl;
+	std::cout << "Available commands: ADD, SEARCH, EXIT" << std::endl;
 	std::cout << std::endl;
 }	
 
 int	check_input(std::string input)
 {
-
-	if (input == ADD || input == "add")
+	if (input == ADD)
 		return (1);
-	else if (input == SEARCH || input == "search")
+	else if (input == SEARCH)
 		return (2);
-	else if (input == EXIT || input == "exit")
+	else if (input == EXIT)
 		return (0);
 	else
 		return (-1);
+}
+
+bool	check_index(const char *index)
+{
+	int i = 0;
+	if (index[i] < 48 || index[i] > 57)
+		return false;
+	else
+	{
+		i = std::atoi(index);
+		if (i >= 0 && i <= 7) 
+			return true;
+		else
+			return false;
+	}
+}
+
+bool	check_contact2(Phonebook phonebook, int i)
+{
+	if (!phonebook.check_contact2(phonebook.get_contact(i)))
+		return true;
+	else
+		return false;
 }
 
 int main() 
 {
 	Phonebook phonebook;
 	int check = 1;
-	std::string input; // questo è l'input del comando
-	std::string input_index; // questo è l'index fornito dall'utente tramite input per la ricerca del contatto
-	int i; // index convertito da stringa in intero
+	std::string input; // command input
+	std::string input_index;
+	int i; // converted index from string to int
 	
 	start();
 	while(check != 0)
 	{
-		std::cout << "Check: " << check << std::endl;
 		std::cout << "Command: ";
 		std::getline(std::cin, input);
 		check = check_input(input);
 		if (check == 1)
+		{
 			phonebook.add_contact();
+			phonebook.setIsEmpty();
+		}
 		else if (check == 2)
 		{
-			phonebook.show_contacts();
-			std::cout << "type index: ";
-			std::getline(std::cin, input_index);
-			i = std::atoi(input_index.c_str());
-			phonebook.show_full_contact(i);
+			while (1)
+			{
+				phonebook.show_contacts();
+				if (phonebook.getIsEmpty())
+				{	
+					std::cout << "You know, you should probably add a contact before looking for it..." << std::endl << std::endl;
+					break;
+				}
+				std::cout << "Type the index of the desired contact: ";
+				std::getline(std::cin, input_index);
+				if (check_index(input_index.c_str()))
+				{
+					i = std::atoi(input_index.c_str());	
+					if (i >= 0 || i <= 7)
+					{
+						if (check_contact2(phonebook, i))
+						{
+							phonebook.show_full_contact(i);
+							break;
+						}
+						else
+							std::cout << "This contact is empty!" << std::endl << std::endl;
+					}
+				}
+				else
+					std::cout << "Invalid index, try again." << std::endl << std::endl;
+			}
 		}
 		else if (check == -1)
-			std::cout << "Error: Invalid Command" << std::endl;
+			std::cout << "Invalid Command. Type ADD, SEARCH or EXIT" << std::endl << std::endl;
 	}
-	std::cout << "index: " << phonebook.get_index() << std::endl;
 	return (0);
 }

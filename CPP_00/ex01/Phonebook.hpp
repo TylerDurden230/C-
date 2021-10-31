@@ -10,17 +10,23 @@
 #include <string>
 #include "contact.hpp"
 #include <iomanip>
+#include <algorithm>
+#include <cctype>
 
 class Phonebook {
     private:
         Contact contact[MAX_CONTACT];
-        int index;
+        int     index;
+        bool    empty;
     public:
         Phonebook();
+        void    setIsEmpty();
+        bool    getIsEmpty();
         void    add_contact();
         int     get_index();
         Contact get_contact(int index);
-        int     check_contacts();
+        int     check_contact(std::string str);
+        bool    check_contact2(Contact contact);
         void    show_contacts();        
         void    show_full_contact(int i);
         ~Phonebook();
