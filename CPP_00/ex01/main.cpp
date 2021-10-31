@@ -36,7 +36,7 @@ bool	check_index(const char *index)
 
 bool	check_contact2(Phonebook phonebook, int i)
 {
-	if (!phonebook.check_contact2(phonebook.get_contact(i)))
+	if (!phonebook.check_contact(phonebook.get_contact(i)))
 		return true;
 	else
 		return false;
@@ -59,14 +59,14 @@ int main()
 		if (check == 1)
 		{
 			phonebook.add_contact();
-			phonebook.setIsEmpty();
+			phonebook.setEmpty();
 		}
 		else if (check == 2)
 		{
 			while (1)
 			{
 				phonebook.show_contacts();
-				if (phonebook.getIsEmpty())
+				if (phonebook.getEmpty())
 				{	
 					std::cout << "You know, you should probably add a contact before looking for it..." << std::endl << std::endl;
 					break;
@@ -76,7 +76,7 @@ int main()
 				if (check_index(input_index.c_str()))
 				{
 					i = std::atoi(input_index.c_str());	
-					if (i >= 0 || i <= 7)
+					if (i >= 0 && i <= 7)
 					{
 						if (check_contact2(phonebook, i))
 						{

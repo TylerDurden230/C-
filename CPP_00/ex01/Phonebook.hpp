@@ -20,13 +20,13 @@ class Phonebook {
         bool    empty;
     public:
         Phonebook();
-        void    setIsEmpty();
-        bool    getIsEmpty();
+        void    setEmpty();
+        bool    getEmpty();
         void    add_contact();
         int     get_index();
         Contact get_contact(int index);
-        int     check_contact(std::string str);
-        bool    check_contact2(Contact contact);
+        int     check_field(std::string str);
+        bool    check_contact(Contact contact);
         void    show_contacts();        
         void    show_full_contact(int i);
         ~Phonebook();

@@ -35,12 +35,12 @@ Phonebook::~Phonebook()
 {	
 }
 
-void	Phonebook::setIsEmpty()
+void	Phonebook::setEmpty()
 {
 	empty = false;
 }
 
-bool	Phonebook::getIsEmpty()
+bool	Phonebook::getEmpty()
 {
 	return (empty);
 }
@@ -55,7 +55,7 @@ Contact	Phonebook::get_contact(int i)
 	return (contact[i]);
 }
 
-int		Phonebook::check_contact(std::string str) // deve controllare quanti contatti esitono
+int		Phonebook::check_field(std::string str) // deve controllare quanti contatti esitono
 {
 	if (str.empty())
 		return 1;
@@ -63,7 +63,7 @@ int		Phonebook::check_contact(std::string str) // deve controllare quanti contat
 		return 0;
 }
 
-bool		Phonebook::check_contact2(Contact contact) // deve controllare se la variabile bool isempty è true o false
+bool		Phonebook::check_contact(Contact contact) // deve controllare se la variabile bool isempty è true o false
 {
 	if (contact.getIsEmpty())
 		return true;
@@ -82,17 +82,17 @@ void	Phonebook::show_contacts() // mostra i contatti esistenti, formattatti nel 
 		if (!contact[i].getIsEmpty())
 		{
 			std::cout << "|" << std::setw(10) << i << "|";
-			if (!check_contact(contact[i].getFname()) && contact[i].getFname().length() > 10)
+			if (!check_field(contact[i].getFname()) && contact[i].getFname().length() > 10)
 				std::cout << std::setw(10) << contact[i].getFname().substr(0, 9).append(".") << "|";
 			else
 				std::cout << std::setw(10) << contact[i].getFname() << "|";
 
-			if (!check_contact(contact[i].getLname()) && contact[i].getLname().length() > 10)
+			if (!check_field(contact[i].getLname()) && contact[i].getLname().length() > 10)
 				std::cout << std::setw(10) << contact[i].getLname().substr(0, 9).append(".") << "|";
 			else
 				std::cout << std::setw(10) << contact[i].getLname() << "|";
 
-			if (!check_contact(contact[i].getNname()) && contact[i].getNname().length() > 10)
+			if (!check_field(contact[i].getNname()) && contact[i].getNname().length() > 10)
 				std::cout << std::setw(10) << contact[i].getNname().substr(0, 9).append(".") << "|" << std::endl;
 			else
 				std::cout << std::setw(10) << contact[i].getNname() << "|" << std::endl; 
