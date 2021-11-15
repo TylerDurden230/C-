@@ -9,8 +9,9 @@ class Sed{
     private:
         std::ifstream in;
         std::ofstream out;
-        std::string repl(std::string str, std::string s1, std::string s2);
+        std::string repl(std::string str, std::string find, std::string replace, size_t pos);
         std::string read(std::string filename, bool *error);
+        void write(std::string filename, std::string content, bool *error);
     public:
         Sed();
         ~Sed();

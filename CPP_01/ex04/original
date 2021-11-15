@@ -1,1 +1,0 @@
-This function does not modify the value of the string in any way. To clear the content of a string, see string::clear.
