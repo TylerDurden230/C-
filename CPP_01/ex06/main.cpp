@@ -15,20 +15,18 @@ int main(int ac, char *argv[])
                 {
                     case 0 :
                         std::cout << "[ DEBUG ]" << std::endl;
-                    break;
+                         karen.complain("DEBUG");
                     case 1 :
                         std::cout << "[ INFO ]" << std::endl;
-                    break;
+                         karen.complain("INFO");
                     case 2 :
                         std::cout << "[ WARNING ]" << std::endl;
-                    break;
+                         karen.complain("WARNING");
                     case 3 :
                         std::cout << "[ ERROR ]" << std::endl;
-                    break;
-                    default:
+                         karen.complain("ERROR");
                     break;
                 }
-                karen.complain(level);
                 return 0;
             }
         }
