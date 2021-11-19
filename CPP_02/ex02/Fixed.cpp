@@ -33,11 +33,61 @@ Fixed::Fixed(const Fixed &original)
 	*this = original;
 }
 
-Fixed&	Fixed::operator=(const Fixed &original)
+Fixed&	Fixed::operator=(const Fixed &b)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	raw = original.raw;
+	raw = b.raw;
 	return *this;
+}
+
+bool Fixed::operator>(const Fixed &b)
+{
+	return (raw > b.raw);
+}
+
+bool Fixed::operator<(const Fixed &b)
+{
+	return (raw < b.raw);
+}
+
+bool Fixed::operator>=(const Fixed &b)
+{
+	return (raw >= b.raw);
+}
+
+bool Fixed::operator<=(const Fixed &b)
+{
+	return (raw <= b.raw);
+}
+
+bool Fixed::operator==(const Fixed &b)
+{
+	return (raw == b.raw);
+}
+
+bool Fixed::operator!=(const Fixed &b)
+{
+	return (raw != b.raw);
+}
+
+Fixed	Fixed::operator+(const Fixed &b)
+{
+	return (Fixed(raw + b.getRawBits()));
+}
+
+Fixed	Fixed::operator-(const Fixed &b)
+{
+	return (Fixed(raw - b.getRawBits()));
+}
+
+Fixed	Fixed::operator*(const Fixed &b)
+{
+	return (Fixed(raw * b.getRawBits()));
+}
+
+Fixed	Fixed::operator/(const Fixed &b)
+{
+	return (Fixed(raw / b.getRawBits()));
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed &fx)
