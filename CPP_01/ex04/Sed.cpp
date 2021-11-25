@@ -56,6 +56,5 @@ void Sed::replace(std::string filename, std::string s1, std::string s2)
     {
         content = Sed::repl(content, s1, s2, 0);
         Sed::write(filename.append(".replace"), content, &error);
-        //std::cout << content << std::endl;
     }
 }
