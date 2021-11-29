@@ -22,7 +22,12 @@ Account::Account(int initial_deposit):_accountIndex(getNbAccounts()), _amount(in
 }
 
 Account::~Account(void)
-{}
+{
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex
+	<< ";amount:" << this->_amount
+	<< ";closed" << std::endl;
+}
 
 void	Account::_displayTimestamp(void) // https://www.cplusplus.com/reference/ctime/strftime/
 {
