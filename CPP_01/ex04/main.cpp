@@ -9,5 +9,6 @@ int main(int ac, char **argv)
     }
     else {
         std::cout << "Wrong arguments number. Shame on You!!!!" << std::endl;
+        std::cout << "./replace [filename] [find] [replace]" << std::endl;
     }
 }

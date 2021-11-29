@@ -7,6 +7,8 @@ int main(int ac, char **av)
     if (n > 0)
     {
         Zombie *horde = zombieHorde(n, "Lello");
+        for (int i = 0; i < n; i++)
+            horde[i].annouce();
         delete[] horde;
     }
     else
