@@ -1,5 +1,4 @@
-
-#pragma once
+#pragma once // equivalente di ifndef etc
 
 class Fixed
 {

@@ -1,5 +1,3 @@
-
-
 #include "Fixed.hpp"
 #include <iostream>
 
@@ -7,35 +5,30 @@ const int Fixed::Q = 8;
 
 Fixed::Fixed()
 {
-	//std::cout << "Default constructor called" << std::endl;
 	raw = 0;
 }
 Fixed::Fixed(const int num)
 {
-	//std::cout << "Int constructor called" << std::endl;
 	raw = (num << Q);
 }
 
 Fixed::Fixed(const float num)
 {
-	//std::cout << "Float constructor called" << std::endl;
 	raw = (round((num) * (1 << Q)));
 }
 
 Fixed::~Fixed()
 {
-	//std::cout << "Destructor called" << std::endl;
+
 }
 
 Fixed::Fixed(const Fixed &original)
 {
-	//std::cout << "Copy constructor called" << std::endl;
 	*this = original;
 }
 
 Fixed&	Fixed::operator=(const Fixed &b)
 {
-	//std::cout << "Assignation operator called" << std::endl;
 	raw = b.raw;
 	return *this;
 }
@@ -96,13 +89,13 @@ std::ostream& operator<<(std::ostream& os, const Fixed &fx)
 	return (os);
 }
 
-Fixed	&Fixed::operator++()
+Fixed	&Fixed::operator++() // ++a
 {
 	this->setRawBits(this->raw + 1);
 	return (*this);
 }
 
-Fixed	Fixed::operator++(int)
+Fixed	Fixed::operator++(int) // a++
 {
 	Fixed i = *this;
 	++*this;
@@ -131,10 +124,8 @@ const	Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 	return (t >= b) ? a : b;
 }
 
-
 int		Fixed::getRawBits(void) const
 {
-	//std::cout << "getRawBits member function called" << std::endl;
 	return (raw);
 }
 
