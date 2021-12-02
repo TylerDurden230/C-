@@ -1,8 +1,8 @@
-NAME = Fixed
+NAME = bsp
 
 FLAGS = -Wall -Wextra -Werror -std=gnu++98
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)

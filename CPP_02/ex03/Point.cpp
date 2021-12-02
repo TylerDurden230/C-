@@ -18,24 +18,19 @@ Point::~Point()
 {
 }
 
-Fixed		Point::getX(void)
+Fixed const &	Point::getX(void) const
 {
 	return (this->x);
 }
 
-Fixed		Point::getY(void)
+Fixed const &	Point::getY(void) const
 {
 	return (this->y);
 }
 
-void	Point::setX(Fixed &f)
+std::ostream& operator<<(std::ostream& os, const Point &p)
 {
-	//x.setRawBits(f.getRawBits());
-	x.setRawBits(0);
+	os << "(x,y) = (" << p.getX() << "," << p.getY() << ")";
+	return (os);
 }
 
-Point&	Point::operator=(const Point &b)
-{
-	raw = b.raw;
-	return *this;
-}

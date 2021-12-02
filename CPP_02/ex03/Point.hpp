@@ -13,8 +13,9 @@ class Point
 		~Point();
 		Point(const Point &original);
 		Point(const Fixed &a, const Fixed &b);
-		Fixed	getX(void);
-		Fixed	getY(void);
-		void	setX(Fixed &f);
+		Fixed	const &getX(void) const;
+		Fixed	const &getY(void) const;
 		Point	&operator=(const Point &b);
 };
+
+std::ostream& operator<<(std::ostream& os, const Point &p);
