@@ -3,10 +3,15 @@
 int main()
 {
 
-    DiamondTrap warrior1("Flavio");
-    DiamondTrap warrior2("Giordano");
+    DiamondTrap warrior1("Giordano");
+    DiamondTrap warrior2("Flavio");
 
-    //warrior2.highFivesGuys();
-    //warrior1.attack("Giordano");
-    //warrior2.takeDamage(30);
+    warrior1.whoAmI();
+    warrior2.whoAmI();
+
+    warrior2.highFivesGuys();
+    warrior1.attack("Flavio");
+    warrior2.takeDamage(30);
+    warrior1.guardGate();
+    warrior2.beRepaired(20);
 }

@@ -1,6 +1,6 @@
 NAME = DiamondTrap
 
-FLAGS = -Wall -Wextra -Werror -std=gnu++98
+FLAGS = -Wall -Wextra -Werror -std=gnu++98  -Wshadow -Wno-shadow
 
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
