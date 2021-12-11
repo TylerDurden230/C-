@@ -20,17 +20,14 @@ Character::Character(const Character &original)
 
 Character::~Character()
 {
-	std::cout << "~Character(" << this->getName() << ") before" << std::endl;
 	for (int i = 0; i < 4; i++){
 		if (this->_inventory[i] != NULL){
 			delete this->_inventory[i];
 		}
 	}
-	std::cout << "~Character(" << this->getName() << ") after" << std::endl;
 }
 
 Character	&Character::operator = (const Character &original){
-	std::cout << "Character operator = called" << std::endl;
 	this->_name = original.getName();
 	for (int i = 0; i < original.getSize(); i++){
 		this->equip(original._inventory[i]->clone());

@@ -15,8 +15,7 @@ int main()
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	me->equip(src->createMateria("cure"));
 
 	ICharacter* bob = new Character("bob");
 
@@ -29,6 +28,7 @@ int main()
 	bob->equip(src->createMateria("ice"));
 	bob->use(0, *me);
 
+	delete tmp;
 	delete bob;
 	delete me;
 	delete src;

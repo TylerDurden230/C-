@@ -40,7 +40,7 @@ void MateriaSource::unequip(int idx)
 
 void MateriaSource::learnMateria(AMateria* m)
 {
-    this->equip(m->clone());
+    this->equip(m);
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
