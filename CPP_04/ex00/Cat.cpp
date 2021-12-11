@@ -3,15 +3,15 @@
 Cat::Cat()
 {
     _type = "Cat";
-    std::cout << "Cat created" << std::endl;
+    std::cout << PURPLE << "Cat created" << RESET << std::endl;
 }
 
 Cat::~Cat()
 {
-    std::cout << "Cat destroyed" << std::endl;
+    std::cout << PURPLE << "Cat destroyed" << RESET << std::endl;
 }
 
 void Cat::makeSound() const
 {
-    std::cout << "Meow" << std::endl;
+    std::cout << PURPLE << "Cat: Meow" << RESET << std::endl;
 }

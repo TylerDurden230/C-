@@ -3,15 +3,15 @@
 Dog::Dog()
 {
     _type = "Dog";
-    std::cout << "Dog created" << std::endl;
+    std::cout << GREEN << "Dog created" << RESET << std::endl;
 }
 
 Dog::~Dog()
 {
-    std::cout << "Dog destroyed" << std::endl;
+    std::cout << GREEN << "Dog destroyed" << RESET << std::endl;
 }
 
 void Dog::makeSound() const
 {
-    std::cout << "Bau" << std::endl;
+    std::cout << GREEN << "Dog: Bau" << RESET << std::endl;
 }
