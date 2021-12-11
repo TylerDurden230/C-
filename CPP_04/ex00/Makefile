@@ -1,8 +1,8 @@
-NAME = Polymorphism
+NAME = animals
 
 FLAGS = -Wall -Wextra -Werror -std=gnu++98
 
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongDog.cpp WrongCat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)

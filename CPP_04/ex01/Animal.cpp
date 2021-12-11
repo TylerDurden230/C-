@@ -2,18 +2,19 @@
 
 Animal::Animal()
 {
+    std::cout << "[" << GREEN << "Animal" << RESET << "] default Costructor" << std::endl;
     this->type = "Animal";
-    std::cout << "[" << GREEN << this->type << RESET << "] has been created" << std::endl;
 }
 
 Animal::Animal(const Animal &original)
 {
+    std::cout << "[" << GREEN << "Animal" << RESET << "] copy Costructor" << std::endl;
 	*this = original;
 }
 
 Animal::~Animal()
 {
-    std::cout << "[" << GREEN << this->type << RESET << "] has been destroyed" << std::endl;
+   std::cout << "[" << GREEN << "Animal" << RESET << "] Destructor" << std::endl;
 }
 
 void Animal::makeSound(void) const
@@ -27,6 +28,8 @@ std::string Animal::getType() const
 }
 
 Animal	&Animal::operator = (const Animal &original){
-	this->type = original.getType();
+    if (this != &original){
+	    this->type = original.getType();
+    }
 	return *this;
 }

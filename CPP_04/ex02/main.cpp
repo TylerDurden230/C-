@@ -1,20 +1,24 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include <iomanip>
 
 int main()
 {
 
         const Animal *zoo[2];
-        zoo[0] = new Dog();
-        zoo[1] = new Cat();
-        delete zoo[0];
-        delete zoo[1]; 
-        
+        for(int i=0; i < 2; i++){
+            if (i % 2)
+                zoo[i] = new Dog();
+            else
+                zoo[i] = new Cat();
+        }
+       for(int i=0; i < 2; i++){
+           delete zoo[i];
+        }
+        std::cout << "--------------------------------" << std::endl;
         Dog basic;
         {
-            Dog tmp = basic;
+            Dog tmp  = basic;
             std::cout << "[" << &basic.getBrain() << "]" << std::endl;
             std::cout << "[" << &tmp.getBrain() << "]" << std::endl;
         }

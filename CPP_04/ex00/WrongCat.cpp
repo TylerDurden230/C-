@@ -1,19 +1,17 @@
 #include "WrongCat.hpp"
-#include "WrongAnimal.hpp"
-#include "Animal.hpp"
 
 WrongCat::WrongCat()
 {
-    _type = "WrongCat";
-    std::cout << RED << "WrongCat created" << RESET << std::endl;
+    std::cout << "[" << CYAN << "WrongCat" << RESET << "] Default Costructor" << std::endl;
+    this->type = "WrongCat";
 }
 
 WrongCat::~WrongCat()
 {
-    std::cout << RED << "WrongCat destroyed" << RESET << std::endl;
+    std::cout << "[" << CYAN << "WrongCat" << RESET << "] destructor" << std::endl;
 }
 
-void WrongCat::makeSound() const
+void WrongCat::makeSound(void) const
 {
-    std::cout << PURPLE << "WrongCat: Meow" << RESET << std::endl;
+    std::cout << CYAN << "miao miao" << RESET << std::endl;
 }

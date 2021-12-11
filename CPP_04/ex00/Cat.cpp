@@ -2,16 +2,16 @@
 
 Cat::Cat()
 {
-    _type = "Cat";
-    std::cout << PURPLE << "Cat created" << RESET << std::endl;
+    std::cout << "[" << CYAN << "Cat" << RESET << "] Default Costructor" << std::endl;
+    this->type = "Cat";
 }
 
 Cat::~Cat()
 {
-    std::cout << PURPLE << "Cat destroyed" << RESET << std::endl;
+    std::cout << "[" << CYAN << "Cat" << RESET << "] destructor" << std::endl;
 }
 
-void Cat::makeSound() const
+void Cat::makeSound(void) const
 {
-    std::cout << PURPLE << "Cat: Meow" << RESET << std::endl;
+    std::cout << CYAN << "meow" << RESET << std::endl;
 }

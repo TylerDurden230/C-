@@ -2,16 +2,16 @@
 
 Dog::Dog()
 {
-    _type = "Dog";
-    std::cout << GREEN << "Dog created" << RESET << std::endl;
+    std::cout << "[" << PURPLE << "Dog" << RESET << "] Default Costructor" << std::endl;
+    this->type = "Dog";
 }
 
 Dog::~Dog()
 {
-    std::cout << GREEN << "Dog destroyed" << RESET << std::endl;
+    std::cout << "[" << PURPLE << "Dog" << RESET << "] Destructor" << std::endl;
 }
 
-void Dog::makeSound() const
+void Dog::makeSound(void) const
 {
-    std::cout << GREEN << "Dog: Bau" << RESET << std::endl;
+    std::cout << PURPLE << "Wouf" << RESET << std::endl;
 }

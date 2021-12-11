@@ -2,9 +2,9 @@
 
 Dog::Dog()
 {
+    std::cout << "[" << PURPLE << "Dog" << RESET << "] Default Costructor" << std::endl;
     this->type = "Dog";
     this->brain = new Brain();
-    std::cout << "[" << PURPLE << this->type << RESET << "] has been created" << std::endl;
 }
 
 Dog::Dog(const Dog &original)
@@ -16,18 +16,20 @@ Dog::Dog(const Dog &original)
 
 Dog::~Dog()
 {
+    std::cout << "[" << PURPLE << "Dog" << RESET << "] Destructor" << std::endl;
     delete this->brain;
-    std::cout << "[" << PURPLE << this->type << RESET << "] has been destroyed" << std::endl;
 }
 
 void Dog::makeSound(void) const
 {
-    std::cout << PURPLE << "bau bau" << RESET << std::endl;
+    std::cout << PURPLE << "wouf" << RESET << std::endl;
 }
 
 Dog	&Dog::operator = (const Dog &original){
-	this->type = original.getType();
-	this->brain = original.brain;
+    if (this != &original){
+        this->type = original.getType();
+        this->brain = original.brain;
+    }
 	return *this;
 }
 

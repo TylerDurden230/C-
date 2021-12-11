@@ -2,18 +2,18 @@
 #define WRONGANIMAL_HPP
 
 #include <iostream>
-#include <string>
+#include "Const.hpp"
 
-class WrongAnimal {
+class WrongAnimal{
     protected:
-        std::string _type;
-    private:
-        
+        std::string type;
+
     public:
         WrongAnimal();
         virtual ~WrongAnimal();
-        std::string getType() const;
-        void makeSound() const;
+        void makeSound() const ;
+        std::string getType() const;  
 };
+
 
 #endif

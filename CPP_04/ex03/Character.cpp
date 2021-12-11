@@ -47,7 +47,7 @@ int Character::getSize() const
 
 void Character::equip(AMateria* m)
 {
-	if (m && this->_size < 4){
+	if (this->_size < 4){
 		this->_inventory[this->_size++] = m;
 	}
 }
