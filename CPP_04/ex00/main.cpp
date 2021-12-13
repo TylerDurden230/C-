@@ -17,14 +17,14 @@ int main()
     meta->makeSound();
 
     delete meta; delete j; delete i;
-    std::cout << "************************************" << std::endl;
+    std::cout << "------------- Wrong Animal -----------------" << std::endl;
 
     const WrongAnimal* meta2 = new WrongAnimal();
     const WrongAnimal* j2 = new WrongDog();
     const WrongAnimal* i2 = new WrongCat();
     std::cout << j2->getType() << " " << std::endl;
     std::cout << i2->getType() << " " << std::endl;
-    i2->makeSound(); //will output the cat sound!
+    i2->makeSound(); // will output the Wronganimal sound!
     j2->makeSound(); 
     meta2->makeSound();
     
