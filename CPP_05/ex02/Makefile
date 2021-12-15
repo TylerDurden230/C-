@@ -1,8 +1,8 @@
-NAME = Forms
+NAME = Shrubbery
 
 FLAGS = -Wall -Wextra -Werror -std=gnu++98
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp  ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)

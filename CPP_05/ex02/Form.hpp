@@ -12,15 +12,16 @@ class Form {
 		const int         _reqGradeToExec;
 	public:
 		Form();
-		~Form();
+		virtual ~Form() = 0;
 		Form(const Form& rhs);
 		Form &operator=(const Form& rhs);
 		Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExec);
 		std::string		getName() const;
 		bool			getSigned() const;
-		int				getreqGradeToSign() const;
-		int				getreqGradeToExec() const;
+		int				getReqGradeToSign() const;
+		int				getReqGradeToExec() const;
 		void			beSigned(const Bureaucrat& b);
+		virtual void 	execute(Bureaucrat const & executor) const;
 		class 			GradeTooHighException : public std::exception
 		{
 			virtual const char* what() const throw()

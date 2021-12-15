@@ -36,22 +36,29 @@ bool			Form::getSigned() const
     return this->_signed;
 }
 
-int				Form::getreqGradeToSign() const
+int				Form::getReqGradeToSign() const
 {
     return this->_reqGradeToSign;
 }
 
-int				Form::getreqGradeToExec() const
+int				Form::getReqGradeToExec() const
 {
     return this->_reqGradeToExec;
 }
 
 void			Form::beSigned(const Bureaucrat& b)
 {
-    if (b.getGrade() <= this->getreqGradeToSign())
+    if (b.getGrade() <= this->getReqGradeToSign())
         this->_signed = true;
     else
         throw Form::GradeTooLowException();
+}
+
+void Form::execute(Bureaucrat const & executor) const
+{
+	std::cout << *this << " can be executed by " << executor << "? Let's try ..." << std::endl;
+	if (executor.getGrade() > this->_reqGradeToExec)
+		throw GradeTooLowException();
 }
 
 Form &Form::operator=(const Form& rhs)
@@ -64,6 +71,6 @@ std::ostream& operator<<(std::ostream& out, const Form& rhs)
 {
     return out << "Form Name: " << rhs.getName() << std::endl  
     << "Signed: " << rhs.getSigned() << std::endl
-    << "Grade to sign: " << rhs.getreqGradeToSign() << std::endl
-    << "Grade to execute: " << rhs.getreqGradeToExec() << std::endl;
+    << "Grade to sign: " << rhs.getReqGradeToSign() << std::endl
+    << "Grade to execute: " << rhs.getReqGradeToExec() << std::endl;
 }
