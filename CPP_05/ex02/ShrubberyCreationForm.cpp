@@ -13,6 +13,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& original)
 {
+    (void) original;
 	std::cout << "Copy Construcrtor Called" << std::endl;
 }
 
@@ -39,7 +40,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 "  [_____]"
 "  \\___/" ;
 	std::ofstream out;
-	const std::string filename = this->_target + "_shrubbery";
+	const std::string filename = this->_target + "_shrubbery.txt";
     out.open(filename);
     if (!out) {
         std::cout << "File not created!" << std::endl;
@@ -48,12 +49,12 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     else {
         out << content;
         out.close();
-        std::cout << "Congratulation! " << this->_target << "_shrubbery has been created successfully!" << std::endl;
+        std::cout << this->_target << "_shrubbery has been created successfully!" << std::endl;
     }
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm& original)
 {
-	(void)original;
-	return	*this; 
+    (void) original;
+	return *this;
 }

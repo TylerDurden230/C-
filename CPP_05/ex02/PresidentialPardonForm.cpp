@@ -12,6 +12,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& original)
 {
+	(void) original;
 	std::cout << "Copy Construcrtor Called" << std::endl;
 }
 
@@ -33,6 +34,6 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm& original)
 {
-	(void)original;
-	return	*this; 
+	(void) original;
+	return *this;
 }

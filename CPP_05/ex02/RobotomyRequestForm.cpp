@@ -12,6 +12,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("Robo
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& original)
 {
+	(void) original;
 	std::cout << "Copy Construcrtor Called" << std::endl;
 }
 
@@ -41,5 +42,5 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& original)
 {
 	(void)original;
-	return	*this; 
+	return *this;
 }
