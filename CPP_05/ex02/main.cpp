@@ -6,40 +6,41 @@
 
 int main()
 {
-    std::cout << std::endl << "-- ShrubberyCreationForm --" << std::endl;
+
+    std::cout << std::endl;
+    Bureaucrat flo("Flavio", 1);
+    Bureaucrat gio("Giordano", 44);
+    std::cout << std::endl << CYAN  << "-- ShrubberyCreationForm --" << RESET << std::endl;
 
     try
     {
-        Bureaucrat flo("Flavio", 1);
-        Bureaucrat gio("Giordano", 150);
         ShrubberyCreationForm c("104");
         flo.executeForm(c);
+        gio.executeForm(c);
     }
         catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "-- RobotomyRequestForm --" << std::endl;
+    std::cout << std::endl << BLUE << "-- RobotomyRequestForm --" << RESET << std::endl;
     try
     {
-        Bureaucrat flo("Flavio", 1);
-        Bureaucrat gio("Giordano", 150);
         RobotomyRequestForm b("Pensione");
         flo.executeForm(b);
+        gio.executeForm(b);
     }
         catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "-- PresidentialPardonForm --" << std::endl;
+    std::cout << std::endl << YELLOW << "-- PresidentialPardonForm --" << RESET << std::endl;
     try
     {
-        Bureaucrat flo("Flavio", 1);
-        Bureaucrat gio("Giordano", 150);
         PresidentialPardonForm a("Grazia");
         flo.executeForm(a);
+        gio.executeForm(a);
     }
         catch (std::exception& e)
     {

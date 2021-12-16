@@ -18,7 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& original)
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "Deconstrucrtor Called" << std::endl;
+	std::cout << "Destructor Called" << std::endl;
 }
 
 const	std::string	RobotomyRequestForm::getTarget() const
@@ -28,14 +28,14 @@ const	std::string	RobotomyRequestForm::getTarget() const
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << "DrIlLInG NoiSe " << std::endl;
+	std::cout << BLUE << "DrIlLInG NoiSe " << RESET << std::endl;
 	Form::execute(executor);
 	srand(time(NULL));
     if (rand()%2) {
-        std::cout << this->_target << " has been robotomized successfully!" << std::endl;
+        std::cout << BLUE << this->_target << " has been robotomized successfully!" << RESET << std::endl;
     }
     else {
-		std::cout << "Oh no .. what a fail! You can't robotomized " << this->_target << std::endl;
+		std::cout << RED << "Oh no .. what a failure! " << this->_target << " can't be robotomized." << RESET << std::endl;
     }
 }
 

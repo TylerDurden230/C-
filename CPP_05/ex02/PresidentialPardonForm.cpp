@@ -29,7 +29,7 @@ const	std::string	PresidentialPardonForm::getTarget() const
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	Form::execute(executor);
-    std::cout << this->_target << " has been pardoned by Zafod Beeblebrox!" << std::endl;
+    std::cout << YELLOW << this->_target << " has been pardoned by Zafod Beeblebrox!" << RESET << std::endl;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm& original)

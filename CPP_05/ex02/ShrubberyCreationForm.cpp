@@ -1,12 +1,12 @@
 #include "ShrubberyCreationForm.hpp"
 
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("Shrubber", 72, 45), _target("none")
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("Shrubber", 145, 137), _target("none")
 {
 	std::cout << this->getName() << " Default's Construcrtor Called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("Shrubber", 72, 45), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("Shrubber", 145, 137), _target(target)
 {
 	std::cout << this->getName() << " Default's Construcrtor Called" << std::endl;
 }
@@ -31,7 +31,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	Form::execute(executor);
 	std::ifstream inFile;
-	inFile.open("ascii.txt");
+	inFile.open("source.txt");
 	if (!inFile)
 		std::cout << RED << "Open file error." << RESET << std::endl;
 

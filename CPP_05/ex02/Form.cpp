@@ -15,7 +15,7 @@ Form::Form(const Form& rhs) : _name(rhs._name), _signed(rhs._signed), _reqGradeT
     std::cout << "Copy Construcrtor Called" << std::endl;
 }
 
-Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExec) : _name(name), _reqGradeToSign(gradeToSign), _reqGradeToExec(gradeToExec)
+Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExec) : _name(name), _signed(false), _reqGradeToSign(gradeToSign), _reqGradeToExec(gradeToExec)
 {
     std::cout << "Tryng to build " << _name << " Form"  << std::endl;
     if (gradeToSign < 1 || gradeToExec < 1)
@@ -56,7 +56,7 @@ void			Form::beSigned(const Bureaucrat& b)
 
 void Form::execute(Bureaucrat const & executor) const
 {
-	std::cout << *this << " can be executed by " << executor << "? Let's try ..." << std::endl;
+	std::cout << *this << "can be executed by " << executor << "? Let's try ..." << std::endl;
 	if (executor.getGrade() > this->_reqGradeToExec)
 		throw GradeTooLowException();
 }
