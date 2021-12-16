@@ -17,7 +17,7 @@ all: $(NAME)
 
 clean:
 	@echo "Tyler is Cleaning..."
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJS) *_shrubbery
 	
 fclean: clean
 	@rm -f $(NAME)

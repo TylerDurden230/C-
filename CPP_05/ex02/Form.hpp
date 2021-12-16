@@ -12,7 +12,7 @@ class Form {
 		const int         _reqGradeToExec;
 	public:
 		Form();
-		virtual ~Form() = 0;
+		virtual ~Form();
 		Form(const Form& rhs);
 		Form &operator=(const Form& rhs);
 		Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExec);

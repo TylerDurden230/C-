@@ -2,23 +2,23 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("President", 25, 5), _target("none")
 {
-	std::cout << "Default's Construcrtor Called" << std::endl;
+	std::cout << this->getName() << "Default's Construcrtor Called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form("President", 25, 5), _target(target)
 {
-	std::cout << "Default's Construcrtor Called" << std::endl;
+	std::cout << this->getName() << " Default's Construcrtor Called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& original)
 {
 	(void) original;
-	std::cout << "Copy Construcrtor Called" << std::endl;
+	std::cout << this->getName() << "Copy Construcrtor Called" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "Deconstrucrtor Called" << std::endl;
+	std::cout << this->getName() << " Destrucrtor Called" << std::endl;
 }
 
 const	std::string	PresidentialPardonForm::getTarget() const

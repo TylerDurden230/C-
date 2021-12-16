@@ -6,27 +6,44 @@
 
 int main()
 {
+    std::cout << std::endl << "-- ShrubberyCreationForm --" << std::endl;
+
     try
     {
         Bureaucrat flo("Flavio", 1);
-        Bureaucrat gio("Giordano", 23);
-        PresidentialPardonForm a("104");
-        RobotomyRequestForm b("Pensione");
-        ShrubberyCreationForm c("sub");
+        Bureaucrat gio("Giordano", 150);
+        ShrubberyCreationForm c("104");
+        flo.executeForm(c);
     }
         catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "--------------------------" << std::endl;
+    std::cout << "-- RobotomyRequestForm --" << std::endl;
     try
     {
-        std::cout << "Culo" << std::endl;
+        Bureaucrat flo("Flavio", 1);
+        Bureaucrat gio("Giordano", 150);
+        RobotomyRequestForm b("Pensione");
+        flo.executeForm(b);
     }
         catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
 
+    std::cout << "-- PresidentialPardonForm --" << std::endl;
+    try
+    {
+        Bureaucrat flo("Flavio", 1);
+        Bureaucrat gio("Giordano", 150);
+        PresidentialPardonForm a("Grazia");
+        flo.executeForm(a);
+    }
+        catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }       
+        
 }
