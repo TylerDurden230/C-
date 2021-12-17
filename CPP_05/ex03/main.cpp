@@ -1,0 +1,53 @@
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
+int main()
+{
+
+    std::cout << std::endl;
+    Bureaucrat flo("Flavio", 1);
+    Bureaucrat gio("Giordano", 44);
+    std::cout << std::endl << CYAN  << "-- ShrubberyCreationForm --" << RESET << std::endl;
+
+    try
+    {
+        ShrubberyCreationForm c("104");
+        flo.executeForm(c);
+        flo.signForm(c);
+        gio.executeForm(c);
+    }
+        catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+    std::cout << std::endl << BLUE << "-- RobotomyRequestForm --" << RESET << std::endl;
+    try
+    {
+        RobotomyRequestForm b("Pensione");
+        flo.executeForm(b);
+        flo.signForm(b);
+        gio.executeForm(b);
+    }
+        catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+    std::cout << std::endl << YELLOW << "-- PresidentialPardonForm --" << RESET << std::endl;
+    try
+    {
+        PresidentialPardonForm a("Grazia");
+        flo.executeForm(a);
+        flo.signForm(a);
+        gio.executeForm(a);
+        flo.executeForm(a);
+    }
+        catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }       
+}
