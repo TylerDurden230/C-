@@ -28,14 +28,14 @@ const	std::string	RobotomyRequestForm::getTarget() const
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << BLUE << "DrIlLInG NoiSe " << RESET << std::endl;
 	Form::execute(executor);
+	std::cout << BLUE << "DrIlLInG NoiSeS..." << RESET << std::endl;
 	srand(time(NULL));
     if (rand()%2) {
         std::cout << BLUE << this->_target << " has been robotomized successfully!" << RESET << std::endl;
     }
     else {
-		std::cout << RED << "Oh no .. what a failure! " << this->_target << " can't be robotomized." << RESET << std::endl;
+		std::cout << RED << "Oh no...what a failure! " << this->_target << " can't be robotomized." << RESET << std::endl;
     }
 }
 

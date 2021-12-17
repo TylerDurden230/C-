@@ -31,6 +31,13 @@ std::string		Form::getName() const
     return this->_name;
 }
 
+bool			Form::checkFormSignedStatus(void) const 
+{
+	if (this->_signed)
+		return true;
+	return false;
+}
+
 bool			Form::getSigned() const
 {
     return this->_signed;
@@ -48,15 +55,21 @@ int				Form::getReqGradeToExec() const
 
 void			Form::beSigned(const Bureaucrat& b)
 {
-    if (b.getGrade() <= this->getReqGradeToSign())
-        this->_signed = true;
+    if (!checkFormSignedStatus())
+    {
+        if (b.getGrade() <= this->getReqGradeToSign())
+            this->_signed = true;
+        else
+            throw Form::GradeTooLowException();
+    }
     else
-        throw Form::GradeTooLowException();
+        std::cout << "this form is already signed" << std::endl;
+
 }
 
 void Form::execute(Bureaucrat const & executor) const
 {
-	std::cout << *this << "can be executed by " << executor << "? Let's try ..." << std::endl;
+	std::cout << *this << "can be executed by " << executor << "? Let's try..." << std::endl;
 	if (executor.getGrade() > this->_reqGradeToExec)
 		throw GradeTooLowException();
 }

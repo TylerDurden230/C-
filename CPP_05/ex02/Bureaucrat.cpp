@@ -69,27 +69,31 @@
             try 
             {
                 f.beSigned(*this);
-                std::cout << this->getName() << " signs " << f.getName() << " Form " << std::endl;
+                std::cout << MAGENTA << this->getName() << " signs " << f.getName() << " Form " << RESET << std::endl;
             }
             catch (std::exception &e) 
             {
-                std::cout << this->getName() << " cannot sign " << f.getName() << " Form because of ";
+                std::cout << RED << this->getName() << " cannot sign " << f.getName() << " Form because of " << RESET;
                 std::cout << e.what() << std::endl;
             }
         }
 
         void	Bureaucrat::executeForm(Form const & form)
         {
-            try
-            {
-                form.execute(*this);
-                std::cout << GREEN << this->_name << " executes " << form.getName() << RESET << std::endl;
-            }
-            catch(const std::exception& e)
-            {
-                 std::cout << RED << this->_name << " can't execute " << form.getName() << RESET << std::endl;
-                std::cerr << e.what() << std::endl;
-            }
+            std::cout << MAGENTA << "Bureaucrat " << this->_name << " is trying to execute " << form.getName() << " Form" << RESET << std::endl; 
+            if (form.checkFormSignedStatus())
+                try
+                {
+                    form.execute(*this);
+                    std::cout << GREEN << this->_name << " executes " << form.getName() << RESET << std::endl;
+                }
+                catch(const std::exception& e)
+                {
+                    std::cout << RED << this->_name << " can't execute " << form.getName() << RESET << std::endl;
+                    std::cerr << e.what() << std::endl;
+                }
+            else
+                std::cout << RED << "This form has to be signed to be executed" << RESET << std::endl;
             
         }
 

@@ -33,13 +33,13 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	std::ifstream inFile;
 	inFile.open("source.txt");
 	if (!inFile)
-		std::cout << RED << "Open file error." << RESET << std::endl;
+		std::cout << RED << "Error: Can't open source file" << RESET << std::endl;
 
 	std::string fileName = this->getTarget() + "_shrubbery";
 
 	std::ofstream outFile(fileName.c_str());
 	if (!outFile)
-		std::cout << RED << "Create file error." << RESET << std::endl;
+		std::cout << RED << "Error: Can't create file" << RESET << std::endl;
 
 	std::string line;
 
@@ -47,7 +47,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		outFile << line << std::endl;
 	outFile.close();
 	inFile.close();
-
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm& original)

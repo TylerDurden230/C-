@@ -16,6 +16,7 @@ int main()
     {
         ShrubberyCreationForm c("104");
         flo.executeForm(c);
+        flo.signForm(c);
         gio.executeForm(c);
     }
         catch (std::exception& e)
@@ -28,6 +29,7 @@ int main()
     {
         RobotomyRequestForm b("Pensione");
         flo.executeForm(b);
+        flo.signForm(b);
         gio.executeForm(b);
     }
         catch (std::exception& e)
@@ -40,11 +42,12 @@ int main()
     {
         PresidentialPardonForm a("Grazia");
         flo.executeForm(a);
+        flo.signForm(a);
         gio.executeForm(a);
+        flo.executeForm(a);
     }
         catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }       
-        
 }
