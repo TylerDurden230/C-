@@ -10,5 +10,4 @@ int main(int ac, char **av)
 		std::cout << "Type is " << type.getType() << std::endl;
 		type.print();
 	}
-	std::cout << "FAI SCHIFO MERDA" << std::endl;
 }

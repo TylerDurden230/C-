@@ -7,6 +7,7 @@ class Type{
 	private:
 		std::string _type;
 		std::string _expr;
+		int 		_impossible; 
 		int			_int;
 		char		_char;
 		float		_float;
@@ -27,7 +28,8 @@ class Type{
 		void    toInt() const;
 		void	toFloat() const;
 		void    toDouble() const;
-		bool	check(int step, std::string::size_type sz);
+		void	evalType(std::string::size_type sz);
+		void	checkType(int step, std::string::size_type sz);
 };
 
 #endif
