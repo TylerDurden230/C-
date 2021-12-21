@@ -3,7 +3,7 @@
 int main() {
 	int tab1[] = {0, 1, 2, 3, 4 };
 	Awesome tab2[5];
-	char tab3[5] = "43210";
+	char tab3[6] = "43210";
 	std::string tab4[5] = {"move", "to", "the", "next", "exercise"};
 
 	std::cout << "--- print ---" << std::endl;
