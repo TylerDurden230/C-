@@ -12,7 +12,7 @@ int main() {
 	iter(tab3, 5, print);
 	iter(tab4, 5, print);
 
-	std::cout << "--- print in color ---" << std::endl;
+	std::cout << "--- Color Print ---" << std::endl;
 	iter<int>(tab1, 5, colorPrint);
 	iter<Awesome>(tab2, 5, colorPrint);
 	iter<char>(tab3, 5, colorPrint);
